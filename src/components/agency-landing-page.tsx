@@ -34,7 +34,6 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
   resources,
   contentPages,
 }) => {
-  console.log(contentPages);
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">

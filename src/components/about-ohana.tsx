@@ -31,23 +31,25 @@ export function AboutOhana() {
         <div className="container px-4 md:px-6">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Aloha and Welcome to the Hickam Support and Resources Hub— 'O Hana
+              Aloha and Welcome to the Hickam Support and Resources Hub— &apos;O
+              Hana
             </h2>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              As a valued member of our Hickam 'Ohana, your well-being and
+              As a valued member of our Hickam &apos;Ohana, your well-being and
               access to resources are our top priorities. This SharePoint portal
               is your gateway to a comprehensive range of support services,
               agencies, and opportunities for you and your family—both within
               Hickam and our vibrant surrounding community.
             </p>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Whether you're pursuing personal growth, professional development,
-              or seeking connections, we're committed to gathering everything in
-              one easy-to-access place. Explore directories for contact
-              information, stay informed through event calendars, and use our
-              upcoming map for locating services. For convenience, we're
-              building a detailed FAQ section, downloadable resources, and a
-              user-friendly search tool to help you find what you need quickly.
+              Whether you&apos;re pursuing personal growth, professional
+              development, or seeking connections, we&apos;re committed to
+              gathering everything in one easy-to-access place. Explore
+              directories for contact information, stay informed through event
+              calendars, and use our upcoming map for locating services. For
+              convenience, we&apos;re building a detailed FAQ section,
+              downloadable resources, and a user-friendly search tool to help
+              you find what you need quickly.
             </p>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               With the spirit of Aloha, we invite you to engage with us. Your
@@ -63,7 +65,7 @@ export function AboutOhana() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                STRENGTHENING 'OHANA
+                STRENGTHENING &apos;OHANA
               </h2>
               <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Strengthening Our Family

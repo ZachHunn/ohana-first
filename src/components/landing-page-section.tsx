@@ -30,7 +30,7 @@ export function LandingPageSection() {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              STRENGTHENING 'OHANA
+              STRENGTHENING &apos;OHANA
             </h2>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Strengthening Our Family

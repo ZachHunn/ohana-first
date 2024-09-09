@@ -8,11 +8,7 @@ import { AgencyList } from "@/components/agency-list";
 import { LoadingLayout } from "@/components/loading-layout";
 
 export default function Page() {
-  const {
-    data: agencies,
-    isLoading,
-    isError,
-  } = useQuery({
+  const { data: agencies, isLoading } = useQuery({
     queryKey: ["agencies"],
     queryFn: async () => {
       const response = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES);
@@ -25,8 +21,8 @@ export default function Page() {
 
   const agencyList = useMemo(() => {
     return agencies?.data
-      ?.sort((a, b) => a.agencyName.localeCompare(b.agencyName))
-      ?.map((agency) => agency);
+      ?.sort((a: Agency, b: Agency) => a.agencyName.localeCompare(b.agencyName))
+      ?.map((agency: Agency) => agency);
   }, [agencies?.data]);
 
   console.log(agencyList);
