@@ -22,11 +22,12 @@ import { Agency, ContentPage, Resource, Service } from "@/types";
 import { FC } from "react";
 import { CONFIG } from "@/config/config";
 import { EUri } from "@/const/enums";
+import React from "react";
 
 type AgencyLandingPageProp = {
   agency: Agency;
-  resources: Resource[];
-  contentPages: ContentPage[];
+  resources: Resource[] | [];
+  contentPages: ContentPage[] | [];
 };
 
 export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
@@ -43,10 +44,10 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    {agency.agencyName}
+                    {agency?.agencyName}
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    {agency.description}
+                  <p className="max-w-[600px] max-h-[200px] text-muted-foreground md:text-xl text-wrap">
+                    {agency?.description}
                   </p>
                 </div>
               </div>
@@ -76,13 +77,13 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              {agency.services?.map((service: Service, index) => {
+              {agency?.services?.map((service: Service, index) => {
                 return (
                   <div className="grid gap-1" key={index}>
                     <InfoIcon className="h-8 w-8 text-primary" />
-                    <h3 className="text-xl font-bold">{service.serviceName}</h3>
+                    <h3 className="text-xl font-bold">{service?.serviceName}</h3>
                     <p className="text-muted-foreground">
-                      {service.serviceDescription}
+                      {service?.serviceDescription}
                     </p>
                   </div>
                 );
@@ -107,11 +108,11 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                       {resources?.map((resource, index) => {
-                        if (resource.type === "doc") {
+                        if (resource?.type === "doc") {
                           return (
                             <Link
                               key={index}
-                              href={`${CONFIG.ADMIN_URL}/assets/${resource.document}`}
+                              href={`${CONFIG.ADMIN_URL}/assets/${resource?.document}`}
                               className="bg-card p-4 rounded-md shadow hover:bg-accent hover:text-accent-foreground transition-colors"
                               prefetch={false}
                             >
@@ -132,20 +133,20 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
                       Useful Links
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                      {resources.map((resource, index) => {
-                        if (resource.type === "link") {
+                      {resources?.map((resource, index) => {
+                        if (resource?.type === "link") {
                           return (
                             <Link
                               key={index}
-                              href={resource.urlLink}
+                              href={resource?.urlLink}
                               className="bg-card p-4 rounded-md shadow hover:bg-accent hover:text-accent-foreground transition-colors"
                               prefetch={false}
                             >
                               <h3 className="text-lg font-medium mb-2">
-                                {resource.title}
+                                {resource?.title}
                               </h3>
                               <p className="text-muted-foreground mb-4">
-                                {resource.shortDescription}
+                                {resource?.shortDescription}
                               </p>
                             </Link>
                           );

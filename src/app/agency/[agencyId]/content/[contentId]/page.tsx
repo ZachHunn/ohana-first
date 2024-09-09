@@ -9,8 +9,7 @@ export default async function Page({
 }) {
   const getAgencyPage = async (agencyID: number, contentID: number) => {
     const res = await fetch(
-      `${CONFIG.ADMIN_URL}${EUri.CONTENT_PAGES}?filter[agency][_eq]=${agencyID}&filter[id][_eq]=${contentID}`,
-      { cache: "no-store" },
+      `${CONFIG.ADMIN_URL}${EUri.CONTENT_PAGES}?filter[agency][_eq]=${agencyID}&filter[id][_eq]=${contentID}`, { cache: 'no-store' }
     );
     const content = await res.json();
     const [data] = content.data;

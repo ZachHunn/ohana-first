@@ -6,12 +6,13 @@ import { useMemo } from "react";
 import { Agency } from "@/types";
 import { AgencyList } from "@/components/agency-list";
 import { LoadingLayout } from "@/components/loading-layout";
+import React from "react";
 
 export default function Page() {
   const { data: agencies, isLoading } = useQuery({
     queryKey: ["agencies"],
     queryFn: async () => {
-      const response = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES);
+      const response = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES, { cache: 'no-store' });
       if (!response.ok) {
         throw new Error("Oh no");
       }

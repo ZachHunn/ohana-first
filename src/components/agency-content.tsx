@@ -19,7 +19,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 
 import { ContentPage } from "@/types";
-import { FC } from "react";
+import React, { FC } from "react";
 
 type ContentPageProp = {
   content: ContentPage;
@@ -51,7 +51,7 @@ export const AgencyContent: FC<ContentPageProp> = ({ content }) => {
           </figcaption>
         </div>
         <div
-          className="prose prose-lg"
+          className="prose prose-lg px-4"
           dangerouslySetInnerHTML={{ __html: content.pageContent }}
         ></div>
       </div>
