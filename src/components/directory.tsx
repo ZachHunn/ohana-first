@@ -33,6 +33,7 @@ import { CONFIG } from "@/config/config";
 import { EUri } from "@/const/enums";
 import Link from "next/link";
 import { DirectoryAgencyDetails } from "@/types";
+import React from "react";
 
 export function Directory() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,8 +54,8 @@ export function Directory() {
 
   const filteredAgencies: DirectoryAgencyDetails[] = agencies?.data.filter(
     (agency) =>
-      agency.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      agency.location.toLowerCase().includes(searchTerm.toLowerCase()),
+      agency?.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      agency?.location.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -78,23 +79,23 @@ export function Directory() {
               <div className="flex flex-col gap-2 mt-4">
                 <div className="flex items-center gap-2">
                   <PhoneIcon className="w-4 h-4" />
-                  <Link href={`tel:${agency.phoneNumber}`}>
-                    {agency.phoneNumber}
+                  <Link href={`tel:${agency?.phoneNumber}`}>
+                    {agency?.phoneNumber}
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">
-                  {agency.altPhoneNumber ? (
+                  {agency?.altPhoneNumber ? (
                     <>
                       <PhoneIcon className="w-4 h-4" />
-                      <Link href={`tel:${agency.altPhoneNumber}`}>
-                        {agency.altPhoneNumber}
+                      <Link href={`tel:${agency?.altPhoneNumber}`}>
+                        {agency?.altPhoneNumber}
                       </Link>
                     </>
                   ) : null}
                 </div>
                 <div className="flex items-center gap-2">
                   <MailOpenIcon className="w-4 h-4" />
-                  <Link href={`mailto:${agency.email}`}>{agency.email}</Link>
+                  <Link href={`mailto:${agency?.email}`}>{agency?.email}</Link>
                 </div>
               </div>
             </CardContent>
