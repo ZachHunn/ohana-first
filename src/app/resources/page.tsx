@@ -7,7 +7,7 @@ export default async function Page() {
     const data = await fetch(CONFIG.ADMIN_URL + EUri.RESOURCES);
     const resource = await data.json();
 
-    return resource;
+    return resource.data;
   };
 
   const resources = await getResourceData();

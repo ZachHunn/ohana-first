@@ -24,10 +24,9 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { CONFIG } from "@/config/config";
-import { EUri } from "@/const/enums";
-import { Resource } from "@/types";
+import { Resource } from "../types";
+import { CONFIG } from "../config/config"
+import React from "react";
 
 type ResourcesProp = {
   resources: Resource[];
@@ -50,7 +49,7 @@ export const ResourceSection: React.FC<ResourcesProp> = async ({
         <section>
           <h2 className="text-2xl font-bold mb-4">Downloads</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {resources.data.map((resource, index) => {
+            {resources.map((resource, index) => {
               if (resource.type === "doc") {
                 return (
                   <Link
@@ -74,7 +73,7 @@ export const ResourceSection: React.FC<ResourcesProp> = async ({
         <section>
           <h2 className="text-2xl font-bold mb-4">Useful Links</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {resources.data.map((resource, index) => {
+            {resources.map((resource, index) => {
               if (resource.type === "link") {
                 return (
                   <Link

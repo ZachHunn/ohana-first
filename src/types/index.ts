@@ -59,7 +59,7 @@ export type Resource = {
   shortDescription: string;
   title: string;
   type: "link" | "doc"; // Adjust according to possible types
-  urlLink: string | null; // URL or null if not applicable
+  urlLink: string; // URL or null if not applicable
   document: string | null; // Document reference or null if not applicable
   resourceAgency: number;
 };

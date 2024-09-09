@@ -2,6 +2,16 @@ import { AgencyContent } from "@/components/agency-content";
 import { CONFIG } from "@/config/config";
 import { EUri } from "@/const/enums";
 
+export const generateStaticParams = async () => {
+  const contentPages = await fetch(CONFIG.ADMIN_URL + EUri.CONTENT_PAGES, { cache: 'no-store' })
+  const content = await contentPages.json()
+
+  return content?.data.map((page) => ({
+    contentId: page.id.toString(),
+    agencyId: page.agency.toString(),
+  }))
+}
+
 export default async function Page({
   params,
 }: {

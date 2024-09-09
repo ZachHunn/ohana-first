@@ -76,7 +76,7 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              {agency.services.map((service: Service, index) => {
+              {agency.services?.map((service: Service, index) => {
                 return (
                   <div className="grid gap-1" key={index}>
                     <InfoIcon className="h-8 w-8 text-primary" />
@@ -106,7 +106,7 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
                       Downloads
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                      {resources.map((resource, index) => {
+                      {resources?.map((resource, index) => {
                         if (resource.type === "doc") {
                           return (
                             <Link
