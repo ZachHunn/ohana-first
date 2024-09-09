@@ -1,15 +1,6 @@
 import { AgencyLandingPage } from "@/components/agency-landing-page";
 import { CONFIG } from "@/config/config";
 import { EUri } from "@/const/enums";
-import { GetStaticProps } from "next";
-
-export const generateStaticParams = async () => {
-  const agencies = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES, { cache: 'no-store' })
-  const content = await agencies.json()
-  return content?.data.map((agency) => ({
-    agencyId: agency.id.toString()
-  }))
-}
 
 export default async function Page({
   params,
