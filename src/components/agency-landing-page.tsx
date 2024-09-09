@@ -81,7 +81,9 @@ export const AgencyLandingPage: FC<AgencyLandingPageProp> = async ({
                 return (
                   <div className="grid gap-1" key={index}>
                     <InfoIcon className="h-8 w-8 text-primary" />
-                    <h3 className="text-xl font-bold">{service?.serviceName}</h3>
+                    <h3 className="text-xl font-bold">
+                      {service?.serviceName}
+                    </h3>
                     <p className="text-muted-foreground">
                       {service?.serviceDescription}
                     </p>

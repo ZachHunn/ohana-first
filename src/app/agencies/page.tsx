@@ -12,7 +12,9 @@ export default function Page() {
   const { data: agencies, isLoading } = useQuery({
     queryKey: ["agencies"],
     queryFn: async () => {
-      const response = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES, { cache: 'no-store' });
+      const response = await fetch(CONFIG.ADMIN_URL + EUri.AGENCIES, {
+        cache: "no-store",
+      });
       if (!response.ok) {
         throw new Error("Oh no");
       }

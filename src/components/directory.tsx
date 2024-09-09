@@ -35,24 +35,13 @@ import Link from "next/link";
 import { DirectoryAgencyDetails } from "@/types";
 import React from "react";
 
-export function Directory() {
+type DirectoryProps = {
+  agencies: DirectoryAgencyDetails[];
+};
+export const Directory: React.FC<DirectoryProps> = ({ agencies }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { data: agencies } = useQuery({
-    queryKey: ["agencies"],
-    queryFn: async () => {
-      const response = await fetch(CONFIG.ADMIN_URL + EUri.DIRECTORY);
 
-      if (!response.ok) {
-        throw new Error(
-          "There was an error fetching the data. Please try again",
-        );
-      }
-
-      return response.json();
-    },
-  });
-
-  const filteredAgencies: DirectoryAgencyDetails[] = agencies?.data.filter(
+  const filteredAgencies: DirectoryAgencyDetails[] = agencies?.filter(
     (agency) =>
       agency?.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       agency?.location.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -104,7 +93,7 @@ export function Directory() {
       </div>
     </div>
   );
-}
+};
 
 function MailOpenIcon(props) {
   return (

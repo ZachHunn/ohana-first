@@ -25,7 +25,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Link from "next/link";
 import { Resource } from "../types";
-import { CONFIG } from "../config/config"
+import { CONFIG } from "../config/config";
 import React from "react";
 
 type ResourcesProp = {
